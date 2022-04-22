@@ -54,18 +54,19 @@
     <h3 style="text-align: center;">Contact us</h3>
     <div class="mb-3">
 
-      <input type="name" class="form-control frm" id="nameInput" placeholder="Name" onblur = "return validateName()">
-      <span class="errorMessageCls" id = "errorMessageName"></span>
+      <input type="name" class="form-control frm" id="nameInput" placeholder="Name" onblur="return validateName()">
+      <span class="errorMessageCls" id="errorMessageName"></span>
     </div>
 
     <div class="mb-3">
-      <input type="email" class="form-control frm" id="emailInput" placeholder="name@example.com" onblur = "return validateEmail()">
-      <span class="errorMessage" id = "errorMessageEmail"></span>
+      <input type="email" class="form-control frm" id="emailInput" placeholder="name@example.com"
+        onblur="return validateEmail()">
+      <span class="errorMessageCls" id="errorMessageEmail"></span>
     </div>
 
     <div class="mb-3">
-      <textarea class="form-control frm" id="messageInput" rows="3"
-        placeholder="Type the message here"></textarea>
+      <textarea class="form-control" id="messageInput" rows="3" onblur="return validateMessage()" placeholder="type message here"></textarea>
+      <span class="errorMessageCls" id="errorMessageMessage"></span>
     </div>
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
       Submit
@@ -151,30 +152,47 @@
 
   <script src="contactScript.js"></script>
   <script type="text/javascript">
-    function validateName(){
+    function validateName() {
       var iName = document.getElementById("nameInput").value;
       console.log(iName);
-      if(iName.length > 0)
-      {
+      if (iName.length > 0) {
         return true;
       }
-      else{
+      else {
         document.getElementById("errorMessageName").innerHTML = "*Invalid name";
         return false;
-      }      
+      }
     }
 
-    function validateEmail(){
-      var iEmail = document.getElementById("emailInput").value;
-      console.log(iEmail);
-      if(iEmail.length > 0)
-      {
-        return true;
+    function validateEmail() {
+      var iEmail = document.getElementById("emailInput").value.toString();     
+      if (iEmail.length > 0) {
+        // console.log("Valid email");
+        if(iEmail.match(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/)){
+          document.getElementById("errorMessageEmail").innerHTML="";
+          return true;
+        }
+        else{
+          document.getElementById("errorMessageEmail").innerHTML = "*Invalid email ID";
+        return false;
+        }
       }
-      else{
+      else {
         document.getElementById("errorMessageEmail").innerHTML = "*Please enter email ID";
         return false;
-      }     
+      }
+    }
+
+    function validateMessage() {
+      var iMessage = document.getElementById("messageInput").value;
+      console.log(iMessage);
+      if (iMessage.length > 0) {
+        return true;
+      }
+      else {
+        document.getElementById("errorMessageMessage").innerHTML = "*Please enter minimum 50 characters";
+        return false;
+      }
     }
   </script>
 </body>
