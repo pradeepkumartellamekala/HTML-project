@@ -1,0 +1,86 @@
+body{
+    background-color:  black;
+    background-image: url("bg5.jpg");
+    height: 800px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.navbar{
+    display : flex;
+    justify-content: space-between;
+    opacity:1;
+}
+
+.navright{
+    color : white;
+    background-color: none;
+    width : 500px;
+    display : flex;
+    justify-content: space-between;    
+    flex-direction: row;   
+
+}
+.alert-primary{
+    /* width : 50px; */
+}
+.navleft{
+    /* background-color: red; */
+}
+
+header{
+    background-color: black;
+    opacity: 0.5;
+
+}
+
+nav ul li a.asdf 
+{
+    color : red;
+}
+
+h3{
+    color : white;
+}
+
+.textBoxes{
+    margin : 5px;
+    padding-left : 500px;
+    padding-right : 500px;
+}
+
+.btn-primary{
+    width : 100%;
+}
+
+#emailInput{
+    border-radius : 20px;
+}
+
+#nameInput{
+    border-radius : 20px;
+}
+
+#messageInput{
+    border-radius : 20px;
+}
+
+button.btn{
+    border-radius: 20px;
+    background-color: red;
+    border : none;
+}
+
+#footer{
+    margin-top : 100px;
+}
+
+#errorMessageName
+{
+    color : red;
+}
+
+#errorMessageEmail
+{
+    color : red;
+}

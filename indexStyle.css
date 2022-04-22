@@ -1,0 +1,42 @@
+body{
+    background-color:  black;
+    background-image: url("naruto.jpg");
+    height: 800px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.navbar{
+    display : flex;
+    justify-content: space-between;
+    opacity:1;
+    font-weight: 900;
+    font-size: 20px;
+    /* font-family: Monospace; */
+}
+
+.navright{
+    color : white;
+    background-color: none;
+    width : 500px;
+    display : flex;
+    justify-content: space-between;    
+    flex-direction: row;
+}
+.alert-primary{
+    /* width : 50px; */
+}
+.navleft{
+    /* background-color: red; */
+}
+
+header{
+    background-color: black;
+    opacity: 0.8;
+
+}
+
+nav ul li a.asdf 
+{
+    color : red;
+}
